@@ -8,8 +8,8 @@ assert = require "assert"
 person =
   name: "Phil Jackson"
   mood: "Bored"
-  dislikes: [ "xml", "murderers", 2, 2.3, { one: { two: "three" } } ]
-  likes:
+  stuff: [ "xml", "murderers", 2, 2.3, { one: { two: "three" } } ]
+  morestuff:
     milkshake: "banana"
 
 assert.ok js2xml = new Js2Xml "person", person
@@ -23,10 +23,10 @@ assert.ok doc.get "/person/name[text()='Phil Jackson']"
 assert.ok doc.get "/person/mood[text()='Bored']"
 
 for dislike in [ "xml", "murderers", "2", "2.3" ]
-  assert.ok doc.get "/person/dislikes/item[text()='#{dislike}']"
+  assert.ok doc.get "/person/stuff/item[text()='#{dislike}']"
 
-assert.ok doc.get "/person/dislikes/item/one/two[text()='three']"
+assert.ok doc.get "/person/stuff/item/one/two[text()='three']"
 
-assert.ok doc.get "/person/likes/milkshake[text()='banana']"
+assert.ok doc.get "/person/morestuff/milkshake[text()='banana']"
 
 console.log( "All passed." )

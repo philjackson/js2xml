@@ -3,6 +3,7 @@
   "name": "js2xml",
   "description": "Convert arbitary javascript to simple XML.",
   "version": "0.0.1",
+  "main": "./lib/js2xml",
   "repository": {
     "url": ""
   },
@@ -12,6 +13,8 @@
   "engines": {
     "node": "~0.6"
   },
-  "dependencies": {},
-  "devDependencies": {}
+  "dependencies": {
+    
+  },
+  "devDependencies": { }
 }

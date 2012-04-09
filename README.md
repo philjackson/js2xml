@@ -13,7 +13,7 @@ It's written in Coffeescript but the JS is included.
 
 # Usage
 
-    { Js2Xml } = require "../lib/js2xml"
+    { Js2Xml } = require "js2xml"
 
     person =
       name: "Phil Jackson"

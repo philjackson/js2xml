@@ -8,7 +8,7 @@
     "url": ""
   },
   "scripts": {
-    "test": "cake test"
+    "test": "make test"
   },
   "engines": {
     "node": "~0.6"

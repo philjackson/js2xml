@@ -14,7 +14,7 @@
     "node": "~0.6"
   },
   "dependencies": {
-    
+    "libxmljs": "0.5.4"
   },
   "devDependencies": {
     "coffee-script": "~1.1"

@@ -13,19 +13,17 @@ It's written in Coffeescript but the JS is included.
 
 # Usage
 
-    { Js2Xml } = require "js2xml"
+    var Js2Xml = require("js2xml").Js2Xml;
 
-    person =
-      name: "Phil Jackson"
-      mood: "Bored"
-      stuff: [ "xml", "murderers", 2, 2.3, { one: { two: "three" } } ]
-      morestuff:
-        milkshake: "banana"
+    var person = {
+      name: "Phil Jackson",
+      mood: "Bored",
+      stuff: [ "xml", "murderers", 2, 2.3, { one: { two: "three" } } ],
+      morestuff: { milkshake: "banana" }
+    };
 
-    # optionally takes version (default "1.0") and encoding (default
-    # "utf-8")
-    js2xml = new Js2Xml "person", person
-    js2xml.toString()
+    var js2xml = new Js2Xml("person", person);
+    js2xml.toString();
 
 Gives:
 

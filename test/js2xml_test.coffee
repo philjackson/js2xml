@@ -1,11 +1,32 @@
 #!/usr/bin/env coffee
 
+libxml = require "libxmljs"
+
 { Js2Xml } = require "../lib/js2xml"
 assert = require "assert"
 
 person =
   name: "Phil Jackson"
   mood: "Bored"
-  dislikes: [ "xml", "murderers" ]
+  dislikes: [ "xml", "murderers", 2, 2.3, { one: { two: "three" } } ]
+  likes:
+    milkshake: "banana"
 
-assert.ok js2xml = new Js2Xml "root"
+assert.ok js2xml = new Js2Xml "person", person
+assert.ok output = js2xml.toString()
+
+doc = libxml.parseXmlString output
+assert.ok doc
+
+assert.ok doc.get "/person"
+assert.ok doc.get "/person/name[text()='Phil Jackson']"
+assert.ok doc.get "/person/mood[text()='Bored']"
+
+for dislike in [ "xml", "murderers", "2", "2.3" ]
+  assert.ok doc.get "/person/dislikes/item[text()='#{dislike}']"
+
+assert.ok doc.get "/person/dislikes/item/one/two[text()='three']"
+
+assert.ok doc.get "/person/likes/milkshake[text()='banana']"
+
+console.log( "All passed." )

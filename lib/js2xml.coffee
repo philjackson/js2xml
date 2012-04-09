@@ -1,19 +1,31 @@
 libxml = require "libxmljs"
 
 class exports.Js2Xml
-  constructor: ( root_element_name, @struct ) ->
-    @doc = libxml.Document()
+  constructor: ( root_element_name, struct, xml_version="1.0", encoding="UTF-8" ) ->
+    @doc = libxml.Document xml_version, encoding
     root = @doc.node root_element_name
 
-  pluralisation: ->
+    @convert struct, root, root_element_name
+
+  pluralisation: ( name ) ->
     return "item"
 
-  traverse: ( structure, document, name ) ->
-    if typeof structure in [ "string" ]
-      document.text = structure
+  convert: ( structure, document, name ) ->
+    # String
+    if typeof structure in [ "string", "number" ]
+      document.text structure
 
-  encode: ->
-    @traverse @struct, @root, @root_element_name
+    # Array
+    else if typeof structure is "object" and Array.isArray structure
+      for item in structure
+        @convert item, document.node( @pluralisation( name ) ), name
 
-  toXml: ->
-    @doc.toXml()
+    # Generic object
+    else if typeof structure is "object"
+      for name, value of structure
+        @convert value, document.node( name ), name
+
+    return @
+
+  toString: ->
+    @doc.toString()

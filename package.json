@@ -2,7 +2,7 @@
   "author": "Phil Jackson <phil@shellarchive.co.uk> (http://apiaxle.com)",
   "name": "js2xml",
   "description": "Convert arbitary javascript to simple XML.",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "main": "./lib/js2xml",
   "repository": {
     "url": ""
@@ -11,7 +11,7 @@
     "test": "make test"
   },
   "engines": {
-    "node": "~0.6"
+    "node": "~0.4"
   },
   "dependencies": {
     "libxmljs": "0.5.4"

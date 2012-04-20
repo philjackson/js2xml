@@ -46,3 +46,15 @@ Gives:
         <milkshake>banana</milkshake>
       </morestuff>
     </person>
+
+# Pluralisation of lists
+
+Here's how you might override the pluralisation function to deal with
+anonymous list items in Javascript:
+
+    class AppleXml extends Js2Xml
+      @map =
+        "apples": "apple"
+
+      pluralisation: ( name ) ->
+        return @constructor.map[ name ] or "item"

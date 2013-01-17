@@ -20,9 +20,9 @@
     "node": ">0.4"
   },
   "dependencies": {
-    "libxmljs": "~0.5"
+    "libxmljs": "*"
   },
   "devDependencies": {
-    "coffee-script": "~1.1"
+    "coffee-script": "~1"
   }
 }

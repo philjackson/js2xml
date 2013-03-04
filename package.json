@@ -1,12 +1,21 @@
 {
-  "author": "Phil Jackson <phil@shellarchive.co.uk> (http://apiaxle.com)",
+  "author": "Phil Jackson <phil@apiaxle.com> (http://apiaxle.com)",
   "name": "js2xml",
-  "description": "Convert arbitary javascript to simple XML.",
-  "version": "0.0.3",
+  "description": "Convert arbitary javascript to simple XML. Developed for by ApiAxle.",
+  "version": "0.0.4",
   "main": "./lib/js2xml",
   "repository": {
     "url": ""
   },
+  "keywords": [
+    "xml",
+    "json",
+    "json2xml",
+    "js2xml",
+    "data2xml",
+    "data",
+    "libxml"
+  ],
   "licenses": [
     {
       "type": "MIT",

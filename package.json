@@ -2,7 +2,7 @@
   "author": "Phil Jackson <phil@apiaxle.com> (http://apiaxle.com)",
   "name": "js2xml",
   "description": "Convert arbitary javascript to simple XML. Developed for ApiAxle.",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "main": "./lib/js2xml",
   "repository": {
     "url": ""
@@ -29,7 +29,7 @@
     "node": ">0.4"
   },
   "dependencies": {
-    "libxmljs": "*"
+    "libxmljs": "0.7"
   },
   "devDependencies": {
     "coffee-script": "~1"

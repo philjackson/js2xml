@@ -18,7 +18,7 @@ It's written in Coffeescript but the JS is included.
     var person = {
       name: "Phil Jackson",
       mood: "Bored",
-      stuff: [ "xml", "murderers", 2, 2.3, { one: { two: "three" } } ],
+      stuff: [ "love, "puppies", 2, 2.3, { one: { two: "three" } } ],
       morestuff: { milkshake: "banana" }
     };
 
@@ -32,8 +32,8 @@ Gives:
       <name>Phil Jackson</name>
       <mood>Bored</mood>
       <stuff>
-        <item>xml</item>
-        <item>murderers</item>
+        <item>love</item>
+        <item>puppies</item>
         <item>2</item>
         <item>2.3</item>
         <item>

@@ -50,7 +50,7 @@ Gives:
 # Pluralisation of lists
 
 Here's how you might override the pluralisation function to deal with
-anonymous list items in Javascript:
+anonymous list items in Coffeescript:
 
     class AppleXml extends Js2Xml
       @map =

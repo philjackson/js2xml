@@ -12,8 +12,8 @@ class exports.Js2Xml
 
   convert: ( structure, document, name ) ->
     # String
-    if typeof structure in [ "string", "number" ]
-      document.text structure
+    if typeof structure in [ "string", "number", "boolean" ]
+      document.text structure.toString()
 
     # Array
     else if typeof structure is "object" and Array.isArray structure

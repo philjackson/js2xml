@@ -11,6 +11,7 @@ person =
   stuff: [ "xml", "murderers", 2, 2.3, { one: { two: "three" } } ]
   morestuff:
     milkshake: "banana"
+    bored: true
 
 assert.ok js2xml = new Js2Xml "person", person
 assert.ok output = js2xml.toString()
@@ -28,6 +29,7 @@ for dislike in [ "xml", "murderers", "2", "2.3" ]
 assert.ok doc.get "/person/stuff/item/one/two[text()='three']"
 
 assert.ok doc.get "/person/morestuff/milkshake[text()='banana']"
+assert.ok doc.get "/person/morestuff/bored[text()='true']"
 
 # check overriding pluralisation works
 
